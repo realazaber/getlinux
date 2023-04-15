@@ -1,1 +1,19 @@
-<p>nav works!</p>
+<nav class="flex flex-row justify-between items-center p-3">
+  <div>
+    <a routerLink="home">
+      <img
+        class="w-20 h-20 object-contain"
+        src="/assets/images/logo.webp"
+        alt="logo"
+      />
+    </a>
+  </div>
+  <div class="flex flex-row gap-3">
+    <a routerLink="about">About</a>
+    <a routerLink="distros">Distros</a>
+    <a routerLink="dualboot">Dual Boot</a>
+  </div>
+  <div>
+    <a routerLink="contact">Contact</a>
+  </div>
+</nav>
