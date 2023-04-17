@@ -33,6 +33,7 @@ const routes: Routes = [
     loadChildren: () =>
       import('./pages/dualboot/dualboot.module').then((m) => m.DualbootModule),
   },
+  { path: 'getstarted', loadChildren: () => import('./pages/getstarted/getstarted.module').then(m => m.GetstartedModule) },
 ];
 
 @NgModule({
