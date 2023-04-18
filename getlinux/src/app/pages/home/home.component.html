@@ -1,10 +1,24 @@
 <img
   class="w-52 h-44 object-contain mx-auto"
-  src="/assets/images/logo.webp"
+  src="{{ pageData?.featuredImg }}"
   alt="Linux Penguin"
 />
 <div
-  class="flex items-center justify-center flex-wrap my-3 mx-auto gap-3 w-[90%"
+  class="my-3 flex flex-col text-xl justify-center items-center"
+  [innerHTML]="pageData?.pgraph"
+></div>
+
+<div class="flex justify-center items-center gap-3">
+  <a routerLink="/about">
+    <button class="btn-pri">About</button>
+  </a>
+  <a routerLink="/getstarted">
+    <button class="btn-sec">Get Started</button>
+  </a>
+</div>
+
+<div
+  class="flex items-center justify-center flex-wrap my-3 mx-auto gap-3 w-[90%] animate__animated animate__fadeIn"
 >
   <app-logocard
     logoPath="/assets/images/distros/debian.webp"
