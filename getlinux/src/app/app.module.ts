@@ -9,7 +9,7 @@ import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [AppComponent, NavComponent, FooterComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule.withServerTransition({ appId: 'serverApp' }), AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
