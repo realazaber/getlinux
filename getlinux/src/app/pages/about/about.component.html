@@ -1,1 +1,11 @@
-<p>about works!</p>
+<div class="flex flex-col justify-center items-center">
+  <img
+    class="w-full h-auto object-cover animate__animated animate__fadeIn"
+    src="{{ pageData?.featuredImg }}"
+    alt="{{ pageData?.featuredImgAlt }}"
+  />
+  <div
+    class="my-3 flex flex-col text-lg justify-center items-center"
+    [innerHTML]="pageData?.pgraph"
+  ></div>
+</div>
