@@ -1,4 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
+import { PageDataService } from 'src/app/services/page-data.service';
+import { Page } from 'src/app/interfaces/Page';
 
 @Component({
   selector: 'app-home',
@@ -6,9 +8,16 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-  @Input() title: String = '...';
-  @Input() pgraph: String = '...';
+  pageData: Page | null = null;
 
-  @Input() featuredImg: String = '...';
-  @Input() featuredImgAlt: String = '...';
+  constructor(private pageDataService: PageDataService) {}
+
+  ngOnInit() {
+    this.pageDataService
+      .getPage('9258053c-6866-4b0f-be50-677e2ce363a3')
+      .subscribe((page) => {
+        this.pageData = page;
+        console.log('component', this.pageData);
+      });
+  }
 }
